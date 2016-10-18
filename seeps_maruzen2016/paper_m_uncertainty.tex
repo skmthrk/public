@@ -1,0 +1,126 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage[top=1.75in, left=1.55in, bottom=1.75in, right=1.55in]{geometry}
+
+\begin{document}
+\noindent
+不確実性と効用理論\\
+\ \\
+\ \\
+\ \\
+
+ある選択の結果として起こり得る帰結が複数考えられる時，
+それぞれの帰結の生じる確率が客観的に与えられている状況を\underline{リスク}（あるいは\underline{危険}と訳されることもある）と呼び，
+そのような確率が与えられていない状況を\underline{不確実性}（あるいは\underline{曖昧さ}）と呼ぶ．
+つまり，何が起こるか確実には分からないが，
+それぞれの相対的な起こりやすさが分かっている状況がリスクであり，
+それがどれくらい起こりやすいかすら把握できていない状況が不確実性である．
+リスクと不確実性とを厳密に分けずに，
+両者を合わせて（広い意味での）不確実性と呼ぶこともある．
+
+\noindent\textbf{●リスクの下での意思決定}\hspace{0.5em}
+リスクの下での意思決定のモデルとして最もよく用いられるのは\underline{期待効用理論}である．
+意思決定のモデルとは，
+選択肢の集合上に定義される好ましさの順序について，
+一定の公理を課すことによって特定のクラスの効用関数を対応させるものである．
+その中でも，$p(x)$を帰結$x\in X$の生じる確率として，
+対応する効用関数が，
+\begin{equation}\label{eq:u1}%
+  \sum_{x\in X}U(x)p(x)
+\end{equation}
+のように，帰結の集合$X$上に定義される関数$U$の期待値によって与えられるものを期待効用理論と呼ぶ．
+これはvon Neumann and Morgenstern (1953)によって理論的に定式化されたもので，
+不確実性下の意思決定に関する基礎理論として広く受け入れられている．
+期待効用理論は，数学的な取り扱いも比較的容易で，
+関数$U$の特定化を通してリスクに対する意思決定者の態度を柔軟に表現することができる．
+例えば，\eqref{eq:u1}の$U$に凹関数を用いることで，
+リスクの存在を嫌うような選好（それは\underline{リスク回避的}な選好と呼ばれる）を表現することが可能である．
+
+動学モデル（例えば$X=\mathbb{R}^{2}_{+}$とした2期間モデル）では，
+関数$U$を
+\begin{equation}\label{eq:u2}%
+  \sum_{(x_{1},x_{2})\in X}\left(u(x_{1}) + \beta u(x_{2})\right)p(x_{1},x_{2})
+\end{equation}
+のように特定化することが多い．
+しかしより一般には，動学モデルにおける期待効用は
+\begin{equation}\label{eq:u3}%
+  \sum_{x_{1}\in \mathbb{R}_{+}}f \left( g^{-1} \left(g (v(x_{1})) + \beta g \left(f^{-1} \left(\sum_{x_{2}\in \mathbb{R}_{+}}f \left(v(x_{2})\right)p(x_{2}|x_{1})\right) \right) \right)  \right)p(x_{1})
+\end{equation}
+のような形で与えられる(Traeger, 2014)．
+ここで，$f$は消費のリスクに関する選好を，$g$は消費の時点に関する選好を捉えるものである．
+なお，\eqref{eq:u2}は\eqref{eq:u3}の特殊ケースで，
+$f=g$である場合（つまりリスクに関する選好と時点に関する選好とが完全に対応する場合）に相当する．
+
+\noindent\textbf{●不確実性の下での意思決定}\hspace{0.5em}
+確率が客観的に与えられていない場合にも，
+しばしば\eqref{eq:u1}のような効用関数が用いられる．
+この場合，\eqref{eq:u1}の$p(x)$は帰結$x\in X$の起こりやすさに関する意思決定者の主観的な信念を捉えたものと解釈され，
+人々の行動から間接的に観察されるものである．
+このような意思決定のモデルは\underline{主観的期待効用理論}と呼ばれ，
+Savage (1972)およびAnscombe and Aumann (1963)によって理論的な基礎が与えられた．
+
+ただ，現実に観察される意思決定の中には，
+主観的期待効用理論では説明できないケースが存在することが知られている．
+Ellsbergの逆理と呼ばれるものがその例で，
+一般的な傾向として，客観的な確率が与えられている状況の方が確率が分からない状況よりも好まれることが多いが，
+主観的期待効用理論ではこの事実を説明することができない．
+そのため，とくに1980年代の後半になって，不確実性下の意思決定に関する代替的なモデルが提案されるようになった．
+
+主要なモデルの１つはSchmeidler (1989)による\underline{Choquet期待効用}の理論で，
+その基本的なアイディアは，人々の主観的な信念を加法的確率測度に限定せず，非加法的確率測度であることを許容するというものである．
+別のアイディアとして，
+人々の信念が一意であることを要求せずに，
+複数の潜在的な信念の中から個別のケースに応じて最悪のシナリオを想定するというモデルもあり(Gilboa and Schmeidler, 1989)，
+これは\underline{Maxmin期待効用}の理論と呼ばれる．
+また2000年代に入ってからは，
+確率が分からないという状況を
+2階の確率（確率分布の集合上の確率分布）によって表現する
+\underline{Smooth ambiguity}モデルなども提案されている(Klibanoff et al., 2005)．
+いずれのモデルも，Ellsbergの逆理に見られるような
+不確実性を嫌う選好（\underline{曖昧さ回避的}な選好と呼ばれる）を表現することが可能である．
+（阪本浩章）\vspace{5pt}
+
+\noindent\textbf{さらに詳しく知るための文献}\hspace{0.5em}\\
+Itzhak Gilboa (2009) \textit{Theory of Decision under Uncertainty},
+Cambridge University Press （川越敏司訳（2014）『不確実性下の意思決定理論』 勁草書房）
+
+\clearpage
+
+\subsubsection*{引用参照文献}
+
+\begin{enumerate}
+  \item Anscombe, F.J. and Aumann, R.J. (1963) ``A definition of subjective probability,''
+    \textit{Annals of Mathematical Statistics}, 34(1), 199--205.
+  \item Gilboa, I. and Schmeidler, D. (1989) ``Maxmin expected utility with non-unique prior,''
+    \textit{Journal of Mathematical Economics}, 18(2), 141--153.
+  \item Klibanoff, P., Marinacci, M., and Mukerji, S. (2005) ``A smooth model of decision making under ambiguity,''
+    \textit{Econometrica}, 73(6), 1849--1892.
+  \item von Neumann, J. and Morgenstern, O. (1953) \emph{Theory of Games and Economic Behavior}, Princeton University Press.
+  \item Savage, L. (1972) \textit{The Foundations of Statistics}, Dover Publications.
+  \item Schmeidler, D. (1989) ``Subjective probability and expected utility without additivity,''
+    \textit{Econometrica}, 57(3), 571--587.
+  \item Traeger, C. (2014) ``Why uncertainty matters: discounting under intertemporal risk aversion and ambiguity,''
+    \textit{Economic Theory}, 56(3), 627--664.
+\end{enumerate}
+
+\subsubsection*{索引語}
+
+\begin{itemize}
+  \item リスク(risk)
+  \item 危険(risk)
+  \item 不確実性(uncertainty)
+  \item 曖昧さ(ambiguity)
+  \item 期待効用理論(expected utility theory)
+  \item リスク回避的(risk averse)
+  \item 主観的期待効用理論(subjective expected utility theory)
+  \item Choquet期待効用(Choquet expected utility)
+  \item Maxmin期待効用(maxmin expected utility)
+  \item Smooth ambiguity
+  \item 曖昧さ回避的(ambiguity averse)
+\end{itemize}
+
+\end{document}
