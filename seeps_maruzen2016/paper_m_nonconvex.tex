@@ -30,19 +30,19 @@
 ある生態系に蓄積されている汚染物質のストックを$z(t)$，
 外部からの汚染流入量を$x(t)$で表わす．
 すると汚染物質の動学は，
-$\dot{z}(t)$を時間あたりの変化量として，一般に
+$\dot{z}(t)$を時間当たりの変化量として，一般に
 \begin{equation}\label{eq:z}%
   \dot{z}(t) = f(z(t)) + x(t)
 \end{equation}
 のようなモデルで表現できる．
 関数$f$は汚染物質に対する自然の応答を捉えるもので，
 その形状はシステムによって異なる．
-例えば\underline{浅い湖}を考えた場合，
+例えば，\underline{浅い湖}を考えた場合，
 水質汚染物質（リン）の動学は，おおむね
 \begin{equation}\label{eq:f}%
   f(z) := -\delta z + \alpha\frac{z^{2}}{1+z^{2}}
 \end{equation}
-のような$f$によって表現できるとされる(Scheffer, 1997)．
+のような$f$によって表現できるとされる(Scheffer, 2004)．
 %ただし，$\delta >0$かつ$\alpha \geq 0$とする．
 \eqref{eq:f}の第1項は
 湖外への流出や湖底への堆積を通じた自然浄化能力を表現しており，
@@ -52,7 +52,7 @@ $\dot{z}(t)$を時間あたりの変化量として，一般に
 パラメタの$\delta >0$と$\alpha >0$は，
 それぞれ負のフィードバックと正のフィードバックの強度を表わす．
 
-話を簡単にするために
+話を簡単にするために，
 外部からの流入量は一定である($x(t)=x\geq 0$)とすると，
 定常状態（長期的な均衡）における汚染ストックの量は$f(z)+x = 0$，つまり
 \begin{equation}\label{eq:ss}%
@@ -81,7 +81,7 @@ $z$は$x$に線形的に反応することが分かる．
 $z$と$x$の関係は\figurename~\ref{fig:nonconvex_lake}の右側のパネルのようになり，
 \underline{履歴効果}と呼ばれる現象が生じる．
 履歴効果とは，いったん環境負荷を強め過ぎてしまうと，
-負荷のレベルを当初の水準に戻してもシステムの状態が元に戻らないことを言う．
+負荷のレベルを当初の水準に戻してもシステムの状態が元に戻らないことをいう．
 例えば，$x_{0}$という環境負荷の下で汚染状態が$z_{0}$で安定している状況（図中の$A$）を考える．
 この時，環境負荷を$x_{1}$まで強めると，
 $\bar{x}$を超えた時点でシステムの均衡が$B$から$C$に移動し（レジームシフト），
@@ -95,20 +95,34 @@ $F$から$G$へと状態を移動させなければならない．
 
 このモデルを用いると，システムに不可逆的な変化が生じる可能性を指摘することもできる．
 例えば，正のフィードバックが極めて強い($\alpha/\delta > 2$)場合には，
-（元に戻る方向の）レジームシフトの閾値$\underline{x}$が負の値となる．
+（もとに戻る方向の）レジームシフトの閾値$\underline{x}$が負の値となる．
 そのようなケースでは，
 いったんシステムが高水準の汚染状態で安定してしまうと，
 外部からの環境負荷を完全に取り除いても原状を回復することは不可能である．
-（阪本浩章）
+
+%\noindent\textbf{●経済学における応用}\hspace{0.5em}
+非凸性や履歴効果は，主に生態学の分野で議論されてきたものであったが，
+近年では経済モデルにも積極的に取り入れられるようになっている(de Zeeuw, 2014)．
+% 経済分析において対象となるのは，
+上記の浅い湖に限らず，
+海洋生態系や，漁業資源，気候システム等，
+経済活動に伴う環境負荷によって非連続的な変化が生じ得るシステムは多い．
+予防原則の観点からは，
+望ましくないレジームシフトがシステムに生じることのないよう
+環境負荷を抑制することが求められるが，
+一般には，費用と便益とを慎重に比較した上で
+最適な環境・資源管理政策を考える必要がある．（阪本浩章）
 
 \clearpage
 
 \subsubsection*{引用参照文献}
 
 \begin{enumerate}
+  \item de Zeeuw, A. (2014) ``Regime shifts in resource management,''
+    \textit{Annual Review of Resource Economics}, 6, 85--104.
   \item Scheffer, M. (2004) \emph{Ecology of Shallow Lakes}, Springer.
-  \item Starrett, D. (1971) ``Fundamental nonconvexities in the theory of externalities,''
-    \textit{Journal of Economic Theory}, 4(1), 180--199.
+  \item Starrett, D. (1972) ``Fundamental nonconvexities in the theory of externalities,''
+    \textit{Journal of Economic Theory}, 4(2), 180--199.
 \end{enumerate}
 
 \subsubsection*{索引語}
